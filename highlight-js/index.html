@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Highlight.js Demo</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <!-- and it's easy to individually load additional languages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/go.min.js"></script>
+    <style>
+      .code-block {
+        max-width: 700px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Highlight.js Demo</h1>
+    <div class="code-block">
+      <pre>
+        <code>
+          for (let i = 0; i < 10; i++) {
+            console.log('I love JavaScript!');
+          }
+    
+          function exampleFunc() {
+            return exampleFunc(); // This won't end well :(
+          }
+          
+          exmpleFunc();
+        </code>
+      </pre>
+    </div>
+    <script>
+      hljs.highlightAll();
+    </script>
+  </body>
+</html>
