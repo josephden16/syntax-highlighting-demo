@@ -1,0 +1,7 @@
+.code-block {
+  font-family: monospace;
+  white-space: pre;
+  background-color: rgb(3, 36, 41);
+  color: rgb(71, 167, 190);
+  max-width: 800px;
+}

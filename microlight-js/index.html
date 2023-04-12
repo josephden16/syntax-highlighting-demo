@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Microlight.js Demo</title>
+  <style>
+    .code-block {
+      font-family: monospace;
+      white-space: pre;
+      background-color: rgb(3, 36, 41);
+      color: rgb(71, 167, 190);
+      max-width: 500px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Microlight.js Demo</h1>
+  <div class="code-block">
+    <pre>
+      <code class="microlight">
+        for (let i = 0; i < 10; i++) {
+          console.log('I love JavaScript!');
+        }
+    
+        function exampleFunc() {
+          return exampleFunc(); // This won't end well :(
+        }
+        
+        exmpleFunc();
+      </code>
+    </pre>
+  </div>
+  <script src="./microlight.js"></script>
+</body>
+
+</html>
