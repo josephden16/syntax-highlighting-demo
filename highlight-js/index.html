@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Highlight.js Demo</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-    <!-- and it's easy to individually load additional languages -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/go.min.js"></script>
-    <style>
-      .code-block {
-        max-width: 700px;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Highlight.js Demo</h1>
-    <div class="code-block">
-      <pre>
-        <code>
+
+<head>
+  <title>Highlight.js Demo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <!-- and it's easy to individually load additional languages -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/go.min.js"></script>
+  <style>
+    .code-block {
+      max-width: 700px;
+      margin: 20px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Highlight.js Demo</h1>
+  <div class="code-block">
+    <!-- code block with automatic language detection -->
+    <pre>
+        <code> 
           for (let i = 0; i < 10; i++) {
             console.log('I love JavaScript!');
           }
@@ -31,9 +32,23 @@
           exmpleFunc();
         </code>
       </pre>
-    </div>
-    <script>
-      hljs.highlightAll();
-    </script>
-  </body>
+  </div>
+  <div class="code-block">
+    <!-- code block with language specified -->
+    <pre>
+        <code class="language-python">
+          # Program to calculate the factorial of a number
+          def factorial(n):
+            if n == 1:
+              return  1
+            return n * factorial(n - 1)
+           print(factorial(3)) 
+        </code>
+      </pre>
+  </div>
+  <script>
+    hljs.highlightAll();
+  </script>
+</body>
+
 </html>
