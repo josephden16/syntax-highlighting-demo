@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StarryNight Demo</title>
+  <!-- This supports light and dark mode automatically. -->
+  <link rel="stylesheet" href="https://esm.sh/@wooorm/starry-night@1/style/both.css">
+
+  <style>
+    .code-block {
+      background-color: rgb(253, 255, 227);
+      border-radius: 4px;
+      max-width: 500px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Starry Night Demo</h1>
+  <div class="code-block">
+    <pre>
+      <code class="language-javascript">
+        for (let i = 0; i < 10; i++) {
+          console.log('I love JavaScript!');
+        }
+  
+        function exampleFunc() {
+          return exampleFunc(); // This won't end well :(
+        }
+        
+        exmpleFunc();
+      </code>
+    </pre>
+  </div>
+
+  <script defer type="module">
+    import { createStarryNight, common } from 'https://esm.sh/@wooorm/starry-night@1?bundle'
+    import { toDom } from 'https://esm.sh/hast-util-to-dom@3?bundle'
+
+    const starryNight = await createStarryNight(common)
+    const prefix = 'language-'
+
+    const nodes = Array.from(document.body.querySelectorAll('code'))
+
+    for (const node of nodes) {
+      const className = Array.from(node.classList).find((d) => d.startsWith(prefix))
+      if (!className) continue
+      const scope = starryNight.flagToScope(className.slice(prefix.length))
+      if (!scope) continue
+      const tree = starryNight.highlight(node.textContent, scope)
+      node.replaceChildren(toDom(tree, { fragment: true }))
+    }  
+  </script>
+
+</body>
+
+</html>
