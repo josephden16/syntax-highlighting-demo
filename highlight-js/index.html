@@ -22,15 +22,19 @@
     <!-- code block with automatic language detection -->
     <pre>
         <code> 
-          for (let i = 0; i < 10; i++) {
-            console.log('I love JavaScript!');
-          }
-    
-          function exampleFunc() {
-            return exampleFunc(); // This won't end well :(
+          const randomPassword = () => {
+            const symbols = '!@#$%^&*()_-+={}[];:<>,.?/~';
+            const allChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890' + symbols;
+            let password = '';
+            for (let i = 0; i < 10; i++) {
+              const randomIndex = Math.floor(Math.random() * allChars.length);
+              password += allChars[randomIndex];
+            }
+            return password;
           }
           
-          exmpleFunc();
+          console.log(randomPassword());
+          
         </code>
       </pre>
   </div>

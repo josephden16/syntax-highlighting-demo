@@ -1,15 +1,18 @@
 import { Code } from "bright";
 
 const code = `
-for (let i = 0; i < 10; i++) {
-  console.log('I love JavaScript!');
+const randomPassword = () => {
+  const symbols = '!@#$%^&*()_-+={}[];:<>,.?/~';
+  const allChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890' + symbols;
+  let password = '';
+  for (let i = 0; i < 10; i++) {
+    const randomIndex = Math.floor(Math.random() * allChars.length);
+    password += allChars[randomIndex];
+  }
+  return password;
 }
 
-function exampleFunc() {
-  return exampleFunc(); // This won't end well :(
-}
-
-exmpleFunc();
+console.log(randomPassword());
 `.trim();
 
 export default function Home() {
